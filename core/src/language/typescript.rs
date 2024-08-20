@@ -80,12 +80,7 @@ impl Language for TypeScript {
             SpecialRustType::U64
             | SpecialRustType::I64
             | SpecialRustType::ISize
-            | SpecialRustType::USize => {
-                panic!(
-                    "64 bit integer types require an explicit output type. \
-                    See: https://1password.github.io/typeshare/usage/annotations.html#special-note-on-64-bit-integer-types for more information."
-                )
-            }
+            | SpecialRustType::USize => Ok("number".into()),
         }
     }
 
